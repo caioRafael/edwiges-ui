@@ -1,13 +1,39 @@
-import React, { ReactNode } from "react";
+import React, { ButtonHTMLAttributes, ReactNode } from "react";
+import { Container } from "./styles";
 
-interface Props{
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement>{
     children: ReactNode
+    text: string,
+    disable?: boolean,
+    width?: number | string
+    height?: number | string
+    background?: string,
+    color?: string 
 }
 
 export const Button: React.FC<Props> = ({
-    children
+    children,
+    text,
+    disable = false,
+    width,
+    height,
+    background,
+    color,
+    ...props
 }) => {
     return(
-        <button>{children}</button>
+        <Container 
+            {...props}
+            style={{
+                width: width,
+                height: height,
+                background: background,
+                color: color,
+                ...props.style
+            }}
+            disabled={disable}
+        >
+            {children} {text}
+        </Container>
     )
 }
