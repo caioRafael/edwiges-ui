@@ -1,0 +1,46 @@
+import { Meta, ArgsTable, Canvas, Story} from '@storybook/addon-docs';
+import { HiSearch } from 'react-icons/hi'
+import { useState } from 'react'
+import { Input } from './'
+import { Button } from '../Button'
+
+<Meta 
+    title="Components/Input"   
+/>
+
+# Input
+
+## A input
+
+export const MyInput = () => {
+    const [text, setText] = useState("")
+    return (
+        <Input
+            name={"Input text"}
+            placeholder={"Input text"}
+            value={text}
+            setValue={setText}
+        />
+    )
+}
+
+<MyInput/>
+
+## With icon
+
+export const MyInputIcon = () => {
+    const [text, setText] = useState("")
+    return (
+        <Input
+            name={"Input text"}
+            placeholder={"Input text"}
+            value={text}
+            setValue={setText}
+            icon={<HiSearch/>}
+        />
+    )
+}
+
+<MyInputIcon/>
+
+<ArgsTable of={Input}/>
