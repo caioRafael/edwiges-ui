@@ -1,0 +1,24 @@
+import { Meta, ArgsTable, Canvas, Story} from '@storybook/addon-docs';
+import { Division } from './'
+
+<Meta 
+    title="Components/Division" 
+    parameters={{
+        backgaround: '#3d518c'
+    }}    
+/>
+
+# Division
+
+
+<Division/>
+
+<Canvas>
+  <Story
+    name="Division"
+  >
+    {(args) => <Division {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Division}/>
